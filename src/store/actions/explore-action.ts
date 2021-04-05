@@ -1,7 +1,6 @@
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { IApplicationState } from "..";
-import { API_BASE_URL } from "../../api";
 import { getExploreCategory } from "../../api/explore";
 import { IAction } from "../../common/interfaces";
 import { ICategoryItem } from "../../interfaces/explore-interfaces";
