@@ -47,7 +47,8 @@ const CODE = {
     '503': 503
 }
 
-const topics = require('./explore/explore-category.json');
+const listCategories = require('./explore/explore-category.json');
+const listCategoryItems = require('./explore/explore-category-item.json');
 
 // function formatSearchString(str = '') {
 //     return str.replace(' ', '').toLowerCase();
@@ -58,12 +59,12 @@ const topics = require('./explore/explore-category.json');
 // }
 
 app.get('/api/explore/category', (req, res, next) => {
-    res.status(CODE[200]).jsonp(topics);
+    res.status(CODE[200]).jsonp(listCategories);
 });
 
 app.get('/api/explore/category/:id', (req, res, next) => {
     const { id } = req.params;
-    res.status(CODE[200]).jsonp(topics);
+    res.status(CODE[200]).jsonp(listCategoryItems.filter(item => item.cateId === Number(id)));
 });
 
 // app.post('/api/topics-history', (req, res, next) => {
