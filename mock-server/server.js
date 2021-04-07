@@ -67,6 +67,16 @@ app.get('/api/explore/category/:id', (req, res, next) => {
     res.status(CODE[200]).jsonp(listCategoryItems.filter(item => item.cateId === Number(id)));
 });
 
+app.post('/api/explore/category/items', (req, res, next) => {
+    const { pageSize, pageIndex } = req.body;
+    try {
+        const result = listCategoryItems.slice(Number(pageIndex) * Number(pageSize), Number(pageIndex + 1) * Number(pageSize));
+        res.status(CODE[200]).json(result);
+    } catch (error) {
+        console.log('error: ', error);
+    }
+});
+
 // app.post('/api/topics-history', (req, res, next) => {
 //     let newTopicsHistory = topicsHistory;
 //     let { id, date, name, iconName } = req.body;
