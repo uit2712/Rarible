@@ -47,47 +47,52 @@ const CODE = {
     '503': 503
 }
 
-const topics = require('./explore-category.json');
+const topics = require('./explore/explore-category.json');
 
-function formatSearchString(str = '') {
-    return str.replace(' ', '').toLowerCase();
-}
+// function formatSearchString(str = '') {
+//     return str.replace(' ', '').toLowerCase();
+// }
 
-function isNullOrUndefined(value) {
-    return [null, undefined].indexOf(value) !== -1;
-}
+// function isNullOrUndefined(value) {
+//     return [null, undefined].indexOf(value) !== -1;
+// }
 
 app.get('/api/explore/category', (req, res, next) => {
     res.status(CODE[200]).jsonp(topics);
 });
 
-app.post('/api/topics-history', (req, res, next) => {
-    let newTopicsHistory = topicsHistory;
-    let { id, date, name, iconName } = req.body;
-    if (Object.keys(req.body).length === 0
-        || isNullOrUndefined(id) === true
-        || isNullOrUndefined(date) === true
-        || isNullOrUndefined(name) === true
-        || isNullOrUndefined(iconName) === true) {
-        res.status(200).json({ error: 'Invalid body' });
-        return;
-    }
-
-    let foundTopic = newTopicsHistory.find(t => t.id === id);
-    if (isNullOrUndefined(foundTopic) === false) {
-        foundTopic.date = date;
-    } else {
-        newTopicsHistory.push({
-            id,
-            date,
-            name,
-            iconName,
-        });
-    }
-
-    fs.writeFile('./history/topics-history.json', JSON.stringify(newTopicsHistory), (error) => {
-        if (error)
-            res.status(404).json({ error: error.message });
-        else res.status(201).json({ message: 'Thêm chủ đề được xem gần nhất thành công' });
-    });
+app.get('/api/explore/category/:id', (req, res, next) => {
+    const { id } = req.params;
+    res.status(CODE[200]).jsonp(topics);
 });
+
+// app.post('/api/topics-history', (req, res, next) => {
+//     let newTopicsHistory = topicsHistory;
+//     let { id, date, name, iconName } = req.body;
+//     if (Object.keys(req.body).length === 0
+//         || isNullOrUndefined(id) === true
+//         || isNullOrUndefined(date) === true
+//         || isNullOrUndefined(name) === true
+//         || isNullOrUndefined(iconName) === true) {
+//         res.status(200).json({ error: 'Invalid body' });
+//         return;
+//     }
+
+//     let foundTopic = newTopicsHistory.find(t => t.id === id);
+//     if (isNullOrUndefined(foundTopic) === false) {
+//         foundTopic.date = date;
+//     } else {
+//         newTopicsHistory.push({
+//             id,
+//             date,
+//             name,
+//             iconName,
+//         });
+//     }
+
+//     fs.writeFile('./history/topics-history.json', JSON.stringify(newTopicsHistory), (error) => {
+//         if (error)
+//             res.status(404).json({ error: error.message });
+//         else res.status(201).json({ message: 'Thêm chủ đề được xem gần nhất thành công' });
+//     });
+// });

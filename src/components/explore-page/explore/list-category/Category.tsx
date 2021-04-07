@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { ICategoryItem } from '../../../../interfaces/explore-interfaces';
 import { fetchExploreCategory } from '../../../../store/actions/explore-action';
@@ -9,9 +11,14 @@ function Category() {
     const dispatch = useDispatch();
     const listCat = useGetExploreCategory();
 
-    React.useEffect(() => {
+    useEffect(() => {
         dispatch(fetchExploreCategory());
     }, [dispatch]);
+
+    const [selectedCateId, setSelectedCateId] = useState(0);
+    function selectCate(cateId: number) {
+        setSelectedCateId(cateId);
+    }
 
     return (
         <div className="sc-bdnylx junRRA">
@@ -33,15 +40,28 @@ function Category() {
                                 marginBottom: 17,
                             }}>
                                 <div role="tablist" className="sc-bdnylx fuGTiM">
-                                    <button className="sc-eCApGN sc-iqAbSa erMVgR eCtGus sc-dIsAE fOcUmi sc-htmbXw cTHdjX" type="button">All</button>
                                     {
-                                        listCat?.map((category: ICategoryItem, index: number) => (
-                                            <div key={index} className="sc-bdnylx glTnZu">
-                                                <button role="tab" aria-selected="false" className="sc-eCApGN sc-iqAbSa erMVgR eZYTnE sc-dIsAE dOaLsj sc-htmbXw bKTjVV" type="button">
-                                                    {category.title}
-                                                </button>
-                                            </div>
-                                        ))
+                                        listCat?.map((category: ICategoryItem) => {
+                                            if (category.id === 0) {
+                                                const btnClassName = classNames('sc-eCApGN sc-iqAbSa erMVgR eCtGus sc-dIsAE fOcUmi sc-htmbXw', {
+                                                    'active-category': category.id === selectedCateId
+                                                });
+                                                return (
+                                                    <button key={category.id} className={btnClassName} type="button" onClick={() => selectCate(category.id)}>{category.title}</button>
+                                                )
+                                            }
+
+                                            const btnClassName = classNames('sc-eCApGN sc-iqAbSa erMVgR eZYTnE sc-dIsAE dOaLsj sc-htmbXw bKTjVV', {
+                                                'active-category': category.id === selectedCateId
+                                            });
+                                            return (
+                                                <div key={category.id} className="sc-bdnylx glTnZu" onClick={() => selectCate(category.id)}>
+                                                    <button role="tab" aria-selected="false" className={btnClassName} type="button">
+                                                        {category.title}
+                                                    </button>
+                                                </div>
+                                            )
+                                        })
                                     }
                                     <div className="sc-ljslrt hvtulX"></div>
                                     <div className="sc-fmdMXc bpSALS"></div>
