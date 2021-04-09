@@ -1,0 +1,815 @@
+/*! CSS Used from: Embedded */
+
+:focus:not([data-focusvisible-polyfill]) {
+    outline: none;
+}
+
+
+/*! CSS Used from: Embedded */
+
+a {
+    background-color: transparent;
+}
+
+img {
+    border-style: none;
+}
+
+button {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0px;
+}
+
+button {
+    overflow: visible;
+}
+
+button {
+    text-transform: none;
+}
+
+button,
+html [type="button"] {
+    appearance: button;
+}
+
+div,
+span,
+a,
+img,
+canvas {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.jbxvPE {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+}
+
+.eQbttW {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    max-width: 100%;
+    z-index: 0;
+    -webkit-box-flex: 1;
+    min-width: 1px;
+    min-height: 1px;
+}
+
+.hCzCJn {
+    margin: 0px 0px 0px 8px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    display: inline;
+}
+
+.eIaCHA {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    border-radius: 100%;
+}
+
+.jvgRQA {
+    margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    flex-basis: auto;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    flex-direction: row;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.gMTbwH {
+    margin: 0px 0px 0px 8px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    display: inline;
+}
+
+.ilszHa {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    border-radius: 6px;
+}
+
+.dHKdQI {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    width: 795px;
+    top: 97px;
+}
+
+.fnyloc {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.gWFzdQ {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: 900;
+}
+
+.epxmmf {
+    text-decoration: none;
+    color: inherit;
+    font-size: 15px;
+    line-height: 20.7px;
+    font-family: inherit;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.CKHKu {
+    text-decoration: none;
+    color: inherit;
+    font-size: 14px;
+    line-height: 19.32px;
+    font-family: inherit;
+    font-weight: 900;
+}
+
+.dCpLuw {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.izNbhn {
+    text-decoration: none;
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    color: rgb(4, 4, 5);
+}
+
+.HymoY {
+    text-decoration: none;
+    color: rgba(4, 4, 5, 0.5);
+    font-size: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+}
+
+.dULuHl {
+    text-decoration: none;
+    color: rgba(4, 4, 5, 0.5);
+    font-size: 12px;
+    line-height: 16.56px;
+    font-family: inherit;
+    font-weight: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.erMVgR {
+    width: auto;
+    color: inherit;
+    padding: 0px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-style: inherit;
+    font-variant: inherit;
+    font-weight: inherit;
+    font-stretch: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: normal;
+    overflow: visible;
+    outline: none;
+}
+
+.fkQFmH {
+    height: 48px;
+    width: 48px;
+    border: 1px solid transparent;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    transition: all 0.12s ease-in-out 0s;
+    border-radius: 48px;
+    background-color: rgba(0, 102, 255, 0.05);
+    transform-origin: center center;
+}
+
+.fkQFmH:hover {
+    background-color: rgba(0, 102, 255, 0.05);
+    color: rgb(4, 4, 5);
+}
+
+.fkQFmH:active {
+    transform: scale(0.95);
+}
+
+.eesVrg {
+    text-decoration: none;
+    color: rgb(0, 102, 255);
+}
+
+.eesVrg:hover {
+    color: rgb(4, 4, 5);
+    cursor: pointer;
+}
+
+.iNDoeG {
+    transition: all 0.12s ease-in-out 0s;
+    color: rgb(4, 4, 5);
+}
+
+.iNDoeG:hover,
+.iNDoeG:focus,
+.iNDoeG:active {
+    color: rgba(4, 4, 5, 0.9);
+}
+
+.ipfhlk {
+    display: inline-block;
+}
+
+.kUsNBB {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex-basis: auto;
+    flex-direction: column;
+    flex-shrink: 0;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+}
+
+.fzdioO {
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border-width: 0px;
+    border-style: solid;
+    border-color: rgb(4, 4, 5);
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    min-height: 0px;
+    min-width: 0px;
+    max-width: 100%;
+    z-index: 0;
+    -webkit-box-flex: 1;
+    height: 420px;
+}
+
+.gZFujt {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.BGpnh {
+    border-radius: 6px;
+}
+
+.cEVuDa {
+    width: 25px;
+    height: 25px;
+}
+
+.hpHFSK {
+    opacity: 0;
+}
+
+.eEthnu {
+    margin: auto;
+}
+
+.fkCSEE {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    transition: opacity 0.2s ease-in-out 0s;
+    margin: auto;
+}
+
+.kiRdWm {
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+.gFPhXg {
+    color: rgb(0, 102, 255);
+    background: linear-gradient(126.49deg, rgb(0, 163, 255) 0%, rgb(0, 102, 255) 100%) text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bMeBwd {
+    color: rgb(12, 80, 255);
+    background: linear-gradient(to right, rgb(12, 80, 255) 0%, rgb(12, 80, 255) 24%, rgb(91, 157, 255) 55.73%, rgb(255, 116, 241) 75%, rgb(255, 116, 241) 100%) text;
+    -webkit-text-fill-color: transparent;
+}
+
+.iqPzjL {
+    width: 26px;
+    height: 26px;
+    position: relative;
+}
+
+.cyyknM {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-flow: column;
+    border-radius: 26px;
+    width: 26px;
+    height: 26px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+.gCHypS {
+    position: absolute;
+    right: -4px;
+    bottom: -8px;
+}
+
+.osPas {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.gMQmvr {
+    inset: 0px;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background: rgb(255, 255, 255);
+    padding: 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(4, 4, 5, 0.1);
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .gMQmvr {
+        padding: 18px 22px;
+    }
+}
+
+@media (min-width: 981px) {
+    .gMQmvr {
+        padding: 22px 24px;
+    }
+}
+
+.ggQiHu {
+    position: absolute;
+    z-index: -1;
+    inset: 0px;
+}
+
+.ggQiHu::before,
+.ggQiHu::after {
+    position: absolute;
+    content: "";
+    height: 40px;
+    display: none;
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    border: 1px solid rgba(4, 4, 5, 0.1);
+}
+
+.ggQiHu::before {
+    left: 3px;
+    right: 3px;
+    bottom: -3px;
+    z-index: -1;
+}
+
+.ggQiHu::after {
+    left: 6px;
+    right: 6px;
+    bottom: -6px;
+    z-index: -2;
+}
+
+.hxMkZp {
+    position: absolute;
+    z-index: -1;
+    inset: 0px;
+}
+
+.hxMkZp::before,
+.hxMkZp::after {
+    position: absolute;
+    content: "";
+    height: 40px;
+    display: block;
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    border: 1px solid rgba(4, 4, 5, 0.1);
+}
+
+.hxMkZp::before {
+    left: 3px;
+    right: 3px;
+    bottom: -3px;
+    z-index: -1;
+}
+
+.hxMkZp::after {
+    left: 6px;
+    right: 6px;
+    bottom: -6px;
+    z-index: -2;
+}
+
+.LYoKA {
+    position: relative;
+}
+
+.jCuKhl {
+    transition: opacity 0.2s ease-in-out 0s;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 10;
+    opacity: 0;
+}
+
+.gCBFvW {
+    min-width: 209px;
+    min-height: 220px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.hyCiJY {
+    min-width: 199px;
+    min-height: 220px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.fA-dOWs {
+    transition: all 0.12s ease-in-out 0s;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    color: rgba(4, 4, 5, 0.5);
+}
+
+.fA-dOWs:hover {
+    color: rgb(4, 4, 5);
+    background: rgba(4, 4, 5, 0.06);
+}
+
+.dzcLqc {
+    display: flex;
+    flex-direction: row;
+}
+
+.dzcLqc> :not(:first-child) {
+    margin-left: -10px;
+}
+
+.XtWek {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    height: 220px;
+}
+
+.blRcVL {
+    opacity: 0.5;
+    transition: all 0.12s ease-in-out 0s;
+    width: 16px;
+    height: 16px;
+}
+
+.dPxVtN {
+    opacity: 0.5;
+    transition: all 0.12s ease-in-out 0s;
+    margin-left: 4px;
+    line-height: 16px;
+    font-size: 14px;
+}
+
+.iFNFRQ {
+    background: transparent;
+    border-color: transparent;
+    height: 36px;
+    border-radius: 22px;
+    padding: 6px 12px;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    transition: all 0.12s ease-in-out 0s;
+}
+
+.iFNFRQ:hover {
+    background: rgba(4, 4, 5, 0.06);
+}
+
+.iFNFRQ:hover .sc-dksuAk,
+.iFNFRQ:hover .sc-jhGSUB {
+    opacity: 1;
+}
+
+.cVbTct {
+    margin-right: -8px;
+    margin-bottom: -8px;
+}
+
+.dStxsV {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.llyEoq {
+    margin-top: 4px;
+    flex-direction: row;
+    align-items: flex-end;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+}
+
+.fYQCFi {
+    margin-top: 16px;
+    display: flex;
+}
+
+.jFXzrz {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.jNeIPT {
+    height: 0px;
+    transition: all 0.12s ease-in-out 0s;
+    transform-origin: center center;
+}
+
+.jNeIPT:active {
+    transform: scale(0.9);
+}
+
+.dmafXj {
+    height: 40px;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    background: rgb(4, 4, 5);
+    border-radius: 40px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-flow: row;
+}
+
+.kwanLy {
+    color: rgb(0, 102, 255);
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.kOfqLk {
+    position: fixed;
+    height: 0px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+    animation-name: jgXHuU;
+}
+
+.leHCdN {
+    position: relative;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+}
+
+
+/*! CSS Used from: Embedded */
+
+.resize-triggers {
+    animation: 1ms resizeanim;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.resize-triggers>div {
+    background: #eee;
+    overflow: auto;
+}
+
+.contract-trigger:before {
+    width: 200%;
+    height: 200%;
+}
+
+
+/*! CSS Used keyframes */
+
+@-webkit-keyframes jgXHuU {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+        z-index: -100;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+        z-index: -100;
+    }
+}
+
+@keyframes jgXHuU {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+        z-index: -100;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+        z-index: -100;
+    }
+}

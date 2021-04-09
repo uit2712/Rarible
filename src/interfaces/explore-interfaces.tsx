@@ -20,6 +20,7 @@ export interface ICreator {
 }
 
 export interface ISellingItem {
+    id: number;
     title: string;
     price: number;
     priceUnit: string;

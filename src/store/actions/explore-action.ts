@@ -1,9 +1,9 @@
 import { Action } from "redux";
 import { ThunkDispatch } from "redux-thunk";
 import { IApplicationState } from "..";
-import { getExploreCategory } from "../../api/explore";
+import { getExploreCategory, getListSellingItems } from "../../api/explore";
 import { IAction } from "../../common/interfaces";
-import { ICategoryItem } from "../../interfaces/explore-interfaces";
+import { ICategoryItem, ISellingItem } from "../../interfaces/explore-interfaces";
 
 export const FETCH_EXPLORE_CATEGORY = 'FETCH_EXPLORE_CATEGORY';
 export const fetchExploreCategory = () => (dispatch: ThunkDispatch<IApplicationState, void, Action>) => {
@@ -18,6 +18,23 @@ export const fetchExploreCategory = () => (dispatch: ThunkDispatch<IApplicationS
 
 export const SET_EXPLORE_CATEGORY = 'SET_EXPLORE_CATEGORY';
 export const setExploreCategory = (list: ICategoryItem[]): IAction<ICategoryItem[]> => ({
-    type: FETCH_EXPLORE_CATEGORY, 
+    type: SET_EXPLORE_CATEGORY, 
+    payload: list,
+})
+
+export const FETCH_LIST_SELLING_ITEMS = 'FETCH_LIST_SELLING_ITEMS';
+export const fetchListSellingItems = (pageSize: number, pageIndex: number) => (dispatch: ThunkDispatch<IApplicationState, void, Action>) => {
+    getListSellingItems(pageSize, pageIndex).then(
+        result => {
+            dispatch(setListSellingItems(result.data));
+        }
+    ).catch(
+        err => {}
+    );
+}
+
+export const SET_LIST_SELLING_ITEMS = 'SET_LIST_SELLING_ITEMS';
+export const setListSellingItems = (list: ISellingItem[]): IAction<ISellingItem[]> => ({
+    type: SET_LIST_SELLING_ITEMS,
     payload: list,
 })
