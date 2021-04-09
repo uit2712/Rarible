@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -8,17 +9,24 @@ import './ListSellingItems.css';
 
 function ListSellingItems() {
     const dispatch = useDispatch();
-    const pageSize = 14;
-    const [pageIndex, setPageIndex] = useState(0);
+    const pageSize = 6;
+    let pageIndex = 6;
+    const totalItemsInRow = 3;
+    // const [pageIndex, setPageIndex] = useState(0);
     const listSellingItems = useGetListSellingItems();
 
     useEffect(() => {
-        console.log(listSellingItems);
-    }, [listSellingItems]);
+        window.onscroll = debounce(() => {
+            if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight ) {
+                // setPageIndex(pageIndex + 1);
+                dispatch(fetchListSellingItems(pageSize, pageIndex++));
+            }
+        }, 100);
+    }, []);
 
     useEffect(() => {
         dispatch(fetchListSellingItems(pageSize, pageIndex));
-    }, [dispatch, pageIndex]);
+    }, [dispatch]);
 
     return (
         <div id="nft-infinite-list" className="sc-bdnylx sc-gXZlrW jbxvPE leHCdN">
@@ -41,7 +49,7 @@ function ListSellingItems() {
             }}>
                 <div className="ReactVirtualized__Grid__innerScrollContainer" role="rowgroup" style={{
                 width: '100%',
-                height: 10080,
+                height: Math.floor((listSellingItems?.length ?? 1) / totalItemsInRow) * 420,
                 maxWidth: '100%',
                 maxHeight: 10080,
                 overflow: 'hidden',
@@ -49,12 +57,12 @@ function ListSellingItems() {
             }}>
                 {
                     listSellingItems?.map((item: ISellingItem, index: number) => (
-                        <div key={item.id} style={{
+                        <div key={index} style={{
                             position: 'absolute',
                             width: 265,
                             height: 420,
-                            top: Math.floor(index / 7) * 420,
-                            left: (index % 7) * 265,
+                            top: Math.floor(index / totalItemsInRow) * 420,
+                            left: (index % totalItemsInRow) * 265,
                             padding: 10,
                         }}>
                             <div data-media-type="image" data-collection-id="0x537eb102e8a97c1c3a623da6d3d03171dd8cf6d6" data-token-id="36" data-marker="root/appPage/marketplace/list/cards/Locked Down - Eire by Sammy Khalid/card" className="sc-jNnnWF sc-gkCpWe fzdioO osPas">

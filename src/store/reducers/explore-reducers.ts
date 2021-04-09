@@ -1,4 +1,5 @@
 import { Action, Reducer } from "redux";
+import { getArrayValue } from "../../common/functions";
 import { IAction } from "../../common/interfaces";
 import { ICategoryItem, ISellingItem } from "../../interfaces/explore-interfaces";
 import { SET_EXPLORE_CATEGORY, SET_LIST_SELLING_ITEMS } from "../actions/explore-action";
@@ -20,12 +21,15 @@ export const reducer: Reducer<IExploreState> = (state = initialState, action: Ac
         case SET_EXPLORE_CATEGORY:
             return {
                 ...state,
-                listExploreCategory: (action as IAction<ICategoryItem[]>).payload,
+                listExploreCategory: getArrayValue<ICategoryItem>((action as IAction<ICategoryItem[]>).payload),
             }
         case SET_LIST_SELLING_ITEMS:
             return {
                 ...state,
-                listSellingItems: (action as IAction<ISellingItem[]>).payload,
+                listSellingItems: [
+                    ...getArrayValue<ISellingItem>(state.listSellingItems),
+                    ...getArrayValue<ISellingItem>((action as IAction<ISellingItem[]>).payload)
+                ],
             }
         default: return state;
     }

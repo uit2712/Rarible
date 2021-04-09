@@ -16,5 +16,7 @@ export interface AppThunkAction<TAction> {
 
 export const store = createStore(
     reducers, 
-    applyMiddleware(thunk)
+    applyMiddleware(thunk),
 )
+
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
