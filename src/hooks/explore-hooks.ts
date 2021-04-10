@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getListSellingItems } from '../api/explore';
-import { ISellingItem } from '../interfaces/explore-interfaces';
+import { getExploreCategory, getListSellingItems } from '../api/explore';
+import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
 
 export function useGetListSellingItems(categoryId: number, pageSize: number, pageIndex: number) {
     const [data, setData] = useState<ISellingItem[]>([]);
@@ -16,7 +16,6 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
         setIsLoading(true);
         getListSellingItems(categoryId, pageSize, pageIndex).then(({ data }) => {
             setData(prevData => [...prevData, ...data]);
-            console.log(data.length > 0);
             setIsHasMore(data.length > 0);
             setIsLoading(false);
         }).catch(err => {
@@ -28,6 +27,29 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
     return {
         data,
         isHasMore,
+        isLoading,
+        error,
+    }
+}
+
+export function useGetListExploreCategories() {
+    const [data, setData] = useState<ICategoryItem[]>([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        setIsLoading(true);
+        getExploreCategory().then(({ data }) => {
+            setData(data);
+            setIsLoading(false);
+        }).catch(err => {
+            setIsLoading(false);
+            setError(true);
+        });
+    }, []);
+
+    return {
+        data,
         isLoading,
         error,
     }

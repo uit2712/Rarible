@@ -1,23 +1,19 @@
 import classNames from 'classnames';
 import * as React from 'react';
-import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useGetListExploreCategories } from '../../../../hooks/explore-hooks';
 import { ICategoryItem } from '../../../../interfaces/explore-interfaces';
-import { fetchExploreCategory } from '../../../../store/actions/explore-action';
-import { useGetExploreCategory } from '../../../../store/selectors/explore-selector';
+import { setSelectedCateId } from '../../../../store/actions/explore-action';
+import { useGetSelectedCateId } from '../../../../store/selectors/explore-selector';
 import './Category.css';
 
 function Category() {
     const dispatch = useDispatch();
-    const listCat = useGetExploreCategory();
+    const { data, isLoading } = useGetListExploreCategories();
 
-    useEffect(() => {
-        dispatch(fetchExploreCategory());
-    }, [dispatch]);
-
-    const [selectedCateId, setSelectedCateId] = useState(0);
+    const selectedCateId = useGetSelectedCateId();
     function selectCate(cateId: number) {
-        setSelectedCateId(cateId);
+        dispatch(setSelectedCateId(cateId));
     }
 
     return (
@@ -41,7 +37,7 @@ function Category() {
                             }}>
                                 <div role="tablist" className="sc-bdnylx fuGTiM">
                                     {
-                                        listCat?.map((category: ICategoryItem) => {
+                                        data?.map((category: ICategoryItem) => {
                                             if (category.id === 0) {
                                                 const btnClassName = classNames('sc-eCApGN sc-iqAbSa erMVgR eCtGus sc-dIsAE fOcUmi sc-htmbXw', {
                                                     'active-category': category.id === selectedCateId

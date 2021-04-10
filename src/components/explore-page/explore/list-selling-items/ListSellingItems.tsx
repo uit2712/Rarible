@@ -4,12 +4,14 @@ import { useEffect, useState } from 'react';
 import { ISellingItem } from '../../../../interfaces/explore-interfaces';
 import './ListSellingItems.css';
 import { useGetListSellingItems } from '../../../../hooks/explore-hooks';
+import { useGetSelectedCateId } from '../../../../store/selectors/explore-selector';
 
 function ListSellingItems() {
     const pageSize = 15;
     const totalItemsInRow = 5;
     const [pageIndex, setPageIndex] = useState(0);
-    const { data, isHasMore, isLoading } = useGetListSellingItems(0, pageSize, pageIndex);
+    const selectedCateId = useGetSelectedCateId();
+    const { data, isHasMore, isLoading } = useGetListSellingItems(selectedCateId, pageSize, pageIndex);
 
     useEffect(() => {
         window.onscroll = debounce(() => {
@@ -20,6 +22,10 @@ function ListSellingItems() {
             }
         }, 100);
     }, [isHasMore, isLoading]);
+
+    useEffect(() => {
+        setPageIndex(0);
+    }, [selectedCateId])
 
     return (
         <div id="nft-infinite-list" className="sc-bdnylx sc-gXZlrW jbxvPE leHCdN">
