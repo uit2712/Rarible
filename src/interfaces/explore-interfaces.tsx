@@ -1,3 +1,5 @@
+import { EFilterType } from "../enums/explore-enums";
+
 export interface ICategoryItem {
     id: number;
     title: string;
@@ -34,4 +36,9 @@ export interface ISellingItem {
     owner: IOwner;
     creator: ICreator;
     cateId: number;
+}
+
+export interface IExploreFilterItem {
+    type: EFilterType;
+    text: string;
 }

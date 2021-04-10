@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { getExploreCategory, getListSellingItems } from '../api/explore';
 import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
+import { setIsLoadingAction } from '../store/actions/common-actions';
 
 export function useGetListSellingItems(categoryId: number, pageSize: number, pageIndex: number) {
+    const dispatch = useDispatch();
     const [data, setData] = useState<ISellingItem[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isHasMore, setIsHasMore] = useState(true);
@@ -10,6 +13,7 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
 
     useEffect(() => {
         setData([]);
+        dispatch(setIsLoadingAction(true));
     }, [categoryId])
 
     useEffect(() => {
@@ -18,9 +22,11 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
             setData(prevData => [...prevData, ...data]);
             setIsHasMore(data.length > 0);
             setIsLoading(false);
+            dispatch(setIsLoadingAction(false));
         }).catch(err => {
             setIsLoading(false);
             setError(true);
+            dispatch(setIsLoadingAction(false));
         });
     }, [categoryId, pageIndex, pageSize]);
 
