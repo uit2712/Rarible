@@ -4,6 +4,7 @@ import { SET_SELECTED_CATE_ID } from "../actions/explore-action";
 
 export interface IExploreState {
     selectedCateId: number;
+    listTopTraders?: ITrader[];
 }
 
 let initialState: IExploreState = {
@@ -17,6 +18,11 @@ export const reducer: Reducer<IExploreState> = (state = initialState, action: Ac
             return {
                 ...state,
                 selectedCateId,
+            }
+        case SET_LIST_TOP_TRADERS:
+            return {
+                ...state,
+                listTopTraders: getArrayValue<ITrader>((action as IAction<ITrader[]>).payload),
             }
         default: return state;
     }

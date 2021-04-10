@@ -1,1 +1,2 @@
-export function abc(){}
+export type TopTraderType = 'sellers' |  'buyers';
+export type TopTraderDuration = 'oneDay' | 'sevenDays' | 'thirtyDays';  

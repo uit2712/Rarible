@@ -7,3 +7,9 @@ export function setSelectedCateId(cateId: number): IAction<number> {
         payload: cateId,
     }
 }
+
+export const SET_LIST_TOP_TRADERS = 'SET_LIST_TOP_TRADERS';
+export const setListTopTraders = (list: ITrader[]): IAction<ITrader[]> => ({
+    type: SET_LIST_TOP_TRADERS,
+    payload: list,
+})
