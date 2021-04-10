@@ -9,7 +9,7 @@ import './ListSellingItems.css';
 
 function ListSellingItems() {
     const dispatch = useDispatch();
-    const pageSize = 6;
+    const pageSize = 9;
     let pageIndex = 6;
     const totalItemsInRow = 3;
     // const [pageIndex, setPageIndex] = useState(0);
