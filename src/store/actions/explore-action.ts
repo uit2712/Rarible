@@ -23,8 +23,8 @@ export const setExploreCategory = (list: ICategoryItem[]): IAction<ICategoryItem
 })
 
 export const FETCH_LIST_SELLING_ITEMS = 'FETCH_LIST_SELLING_ITEMS';
-export const fetchListSellingItems = (pageSize: number, pageIndex: number) => (dispatch: ThunkDispatch<IApplicationState, void, Action>) => {
-    getListSellingItems(pageSize, pageIndex).then(
+export const fetchListSellingItems = (categoryId: number, pageSize: number, pageIndex: number) => (dispatch: ThunkDispatch<IApplicationState, void, Action>) => {
+    getListSellingItems(categoryId, pageSize, pageIndex).then(
         result => {
             dispatch(setListSellingItems(result.data));
         }
