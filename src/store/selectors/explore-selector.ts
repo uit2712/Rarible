@@ -8,3 +8,7 @@ export const useGetExploreCategory = () => {
 export const useGetListSellingItems = () => {
     return useSelector((state: IApplicationState) => state.explore.listSellingItems);
 }
+
+export const useGetListTopTraders = () => {
+    return useSelector((state: IApplicationState) => state.explore.listTopTraders);
+}

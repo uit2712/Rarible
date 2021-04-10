@@ -35,3 +35,10 @@ export interface ISellingItem {
     creator: ICreator;
     cateId: number;
 }
+
+export interface ITrader {
+    index?: number;
+    name: string;
+    total: string;
+    imgSrc: string;
+}

@@ -1,13 +1,14 @@
 import { Action, Reducer } from "redux";
 import { getArrayValue } from "../../common/functions";
 import { IAction } from "../../common/interfaces";
-import { ICategoryItem, ISellingItem } from "../../interfaces/explore-interfaces";
-import { SET_EXPLORE_CATEGORY, SET_LIST_SELLING_ITEMS } from "../actions/explore-action";
+import { ICategoryItem, ISellingItem, ITrader } from "../../interfaces/explore-interfaces";
+import { SET_EXPLORE_CATEGORY, SET_LIST_SELLING_ITEMS, SET_LIST_TOP_TRADERS } from "../actions/explore-action";
 
 export interface IExploreState {
     listExploreCategory?: ICategoryItem[];
     listSellingItems?: ISellingItem[];
     selectedCateId: number;
+    listTopTraders?: ITrader[];
 }
 
 let initialState: IExploreState = {
@@ -30,6 +31,11 @@ export const reducer: Reducer<IExploreState> = (state = initialState, action: Ac
                     ...getArrayValue<ISellingItem>(state.listSellingItems),
                     ...getArrayValue<ISellingItem>((action as IAction<ISellingItem[]>).payload)
                 ],
+            }
+        case SET_LIST_TOP_TRADERS:
+            return {
+                ...state,
+                listTopTraders: getArrayValue<ITrader>((action as IAction<ITrader[]>).payload),
             }
         default: return state;
     }

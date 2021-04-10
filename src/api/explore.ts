@@ -1,4 +1,4 @@
-import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
+import { ICategoryItem, ISellingItem, ITrader } from '../interfaces/explore-interfaces';
 import {request as Api} from './index';
 
 export function getExploreCategory() {
@@ -14,4 +14,11 @@ export function getListSellingItems(pageSize: number, pageIndex: number) {
         pageSize,
         pageIndex,
     });
+}
+
+export function getListTopTrader(type: string, duration?: string) {
+    const params = {
+        duration: duration,
+    }
+    return Api.get<ITrader[]>(`/top/${type}`, {params: params}); 
 }
