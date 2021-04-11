@@ -2,17 +2,20 @@ import { applyMiddleware, combineReducers, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import * as ExploreReducer from './reducers/explore-reducers';
 import * as CommonReducer from './reducers/common-reducer';
+import * as CollectibleReducer from './reducers/collectible-reducer';
 import { connectRouter } from 'connected-react-router';
 import { history } from '../history';
 
 export interface IApplicationState {
     explore: ExploreReducer.IExploreState,
     common: CommonReducer.ICommonState,
+    collectible: CollectibleReducer.ICollectibleState,
 }
 
 export const reducers = combineReducers({
     explore: ExploreReducer.reducer,
     common: CommonReducer.reducer,
+    collectible: CollectibleReducer.reducer,
     router: connectRouter(history),
 })
 

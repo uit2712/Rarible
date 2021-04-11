@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { ISellingItem } from '../../../common/interfaces';
 import { ECategoryType } from '../../../enums/collectible-enums';
 import { ICategoryItem } from '../../../interfaces/collectible-interfaces';
 
@@ -57,34 +58,6 @@ function ListCategories() {
                                     </button>
                                 ))
                             }
-                            {/* <button role="tab" aria-selected="true" type="button" data-marker="root/appPage/address/tabs/tab/onsale" className="sc-eCApGN sc-jcsNZN erMVgR JcBaK">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">On sale</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">3</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jZfGyH"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/collectibles" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Collectibles</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">3</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/created" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Created</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">6</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/liked" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Liked</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">37</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/activity" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Activity</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/followings" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Following</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">61</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button>
-                            <button role="tab" aria-selected="false" type="button" data-marker="root/appPage/address/tabs/tab/followers" className="sc-eCApGN sc-jcsNZN erMVgR fmmkIU">
-                                <span className="sc-gtssRu sc-fnebjS eqDhyJ iQUCaz">Followers</span><span className="sc-gtssRu sc-iuhWtz cPQJwx kYhAtB">387</span>
-                                <div className="sc-bdnylx sc-fkmfhw bvKcKO jSKQbL"></div>
-                            </button> */}
                         </div>
                     </div>
                     <div className="sc-fKgIGh efpGaJ" style={{

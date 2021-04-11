@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getExploreCategory, getListSellingItems } from '../api/explore';
-import { ICategoryItem, IRequestGetListSellingItems, ISellingItem } from '../interfaces/explore-interfaces';
+import { ISellingItem } from '../common/interfaces';
+import { ICategoryItem, IRequestGetListSellingItems } from '../interfaces/explore-interfaces';
 import { setIsLoadingAction } from '../store/actions/common-actions';
 
 export function useGetListSellingItems(request: IRequestGetListSellingItems) {

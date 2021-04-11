@@ -50,6 +50,7 @@ const CODE = {
 const listCategories = require("./explore/explore-category.json");
 const listCategoryItems = require("./explore/explore-category-item.json");
 const listTopBuyerSeller = require("./top-seller-buyer/top-seller.json");
+const listOnSaleItems = require("./collectible/list-on-sale-items.json");
 // function formatSearchString(str = '') {
 //     return str.replace(' ', '').toLowerCase();
 // }
@@ -117,6 +118,10 @@ app.post("/api/explore/category/items", (req, res, next) => {
     } catch (error) {
         console.log("error: ", error);
     }
+});
+
+app.get("/api/collectible/listOnSaleItems", (req, res, next) => {
+    res.status(CODE[200]).jsonp(listOnSaleItems);
 });
 
 // app.get("/api/top/:type", (req, res, next) => {

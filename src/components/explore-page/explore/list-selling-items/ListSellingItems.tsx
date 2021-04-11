@@ -1,7 +1,7 @@
 import debounce from 'lodash.debounce';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-import { ISellingItem } from '../../../../interfaces/explore-interfaces';
+import { ISellingItem } from '../../../../common/interfaces';
 // import './ListSellingItems.css';
 import { useGetListSellingItems } from '../../../../hooks/explore-hooks';
 import { useGetSelectedCateId, useGetSelectedFilterType } from '../../../../store/selectors/explore-selector';

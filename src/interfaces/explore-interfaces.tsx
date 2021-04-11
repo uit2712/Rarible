@@ -6,38 +6,6 @@ export interface ICategoryItem {
     icon?: string;
 }
 
-export interface ICollection {
-    name: string;
-    imageUrl: string;
-}
-
-export interface IOwner {
-    name: string;
-    imageUrl: string;
-}
-
-export interface ICreator {
-    name: string;
-    imageUrl: string;
-}
-
-export interface ISellingItem {
-    id: number;
-    title: string;
-    price: number;
-    priceUnit: string;
-    avatarUrl: string;
-    currentStock: number;
-    currentSupply: number;
-    bidPrice?: number;
-    bidUnit?: string;
-    totalLike: number;
-    collection: ICollection;
-    owner: IOwner;
-    creator: ICreator;
-    cateId: number;
-}
-
 export interface IExploreFilterItem {
     type: EFilterType;
     text: string;

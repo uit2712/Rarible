@@ -1,0 +1,77 @@
+[
+    {
+        "title":"",
+        "price":0.094,
+        "priceUnit":"ETH",
+        "avatarUrl":"https://images.rarible.com/?fit=outsize&n=-1&url=https%3A%2F%2Fipfs.rarible.com%2Fipfs%2FQmUNbMmMtbzP5ZwpQ7X77cNEqR5DvEmDYqWvw1QQkx7nbE&w=100",
+        "currentStock":5,
+        "currentSupply":10,
+        "bidPrice":null,
+        "totalLike":82,
+        "collection":{
+            "name":"Rarible"
+        },
+        "owner":{
+            "name":"Svosemzen"
+        },
+        "creator":{
+            "name":"DJ Many"
+        }
+    },
+    {
+        "title":"",
+        "price":0.165,
+        "priceUnit":"ETH",
+        "avatarUrl":"https://images.rarible.com/?fit=outsize&n=-1&url=https%3A%2F%2Fipfs.rarible.com%2Fipfs%2FQmUrp44p1xLeHMyBsFbEPavJxDCmCzHpxfRZ8Yc6nokLg8&w=100",
+        "currentStock":1,
+        "currentSupply":40,
+        "bidPrice":0.1,
+        "bidUnit":"WETH",
+        "totalLike":417,
+        "collection":{
+            "name":"Rarible"
+        },
+        "owner":{
+            "name":"Svosemzen"
+        },
+        "creator":{
+            "name":"DJ Many"
+        }
+    },
+    {
+        "title":"",
+        "price":0.093,
+        "priceUnit":"ETH",
+        "avatarUrl":"https://images.rarible.com/?fit=outsize&n=-1&url=https%3A%2F%2Fipfs.rarible.com%2Fipfs%2FQmUNbMmMtbzP5ZwpQ7X77cNEqR5DvEmDYqWvw1QQkx7nbE&w=100",
+        "currentStock":1,
+        "currentSupply":11,
+        "bidPrice":0.002,
+        "bidUnit":"WETH",
+        "totalLike":98,
+        "collection":{
+            "name":"Rarible"
+        },
+        "owner":{
+            "name":"Svosemzen"
+        },
+        "creator":{
+            "name":"DJ Many"
+        }
+    },
+    {
+        "price":null,
+        "currentStock":null,
+        "currentSupply":null,
+        "bidPrice":null,
+        "totalLike":null,
+        "collection":{
+            "name":"Rarible"
+        },
+        "owner":{
+            "name":"Svosemzen"
+        },
+        "creator":{
+            "name":"DJ Many"
+        }
+    }
+]

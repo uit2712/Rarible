@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { ISellingItem } from '../../../../interfaces/explore-interfaces';
+import { ISellingItem } from '../../../../common/interfaces';
 
 function SellingItem({
     item,

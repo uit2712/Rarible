@@ -1,4 +1,5 @@
-import { ICategoryItem, IRequestGetListSellingItems, ISellingItem } from '../interfaces/explore-interfaces';
+import { ISellingItem } from '../common/interfaces';
+import { ICategoryItem, IRequestGetListSellingItems } from '../interfaces/explore-interfaces';
 import {request as Api} from './index';
 
 export function getExploreCategory() {
