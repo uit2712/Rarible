@@ -1,1 +1,4 @@
-export function abc(){}
+export const routerUrl = {
+    home: '/',
+    collectible: '/collectible',
+}
