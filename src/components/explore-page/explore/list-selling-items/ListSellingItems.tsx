@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { ISellingItem } from '../../../../interfaces/explore-interfaces';
 import './ListSellingItems.css';
 import { useGetListSellingItems } from '../../../../hooks/explore-hooks';
-import { useGetSelectedCateId } from '../../../../store/selectors/explore-selector';
+import { useGetSelectedCateId, useGetSelectedFilterType } from '../../../../store/selectors/explore-selector';
 import SellingItemLoading from './SellingItemLoading';
 // import SellingItem from './SellingItem';
 const SellingItem = React.lazy(() => import('./SellingItem'));
@@ -14,7 +14,13 @@ function ListSellingItems() {
     const totalItemsInRow = 5;
     const [pageIndex, setPageIndex] = useState(0);
     const selectedCateId = useGetSelectedCateId();
-    const { data, isHasMore, isLoading } = useGetListSellingItems(selectedCateId, pageSize, pageIndex);
+    const selectedFilterType = useGetSelectedFilterType();
+    const { data, isHasMore, isLoading } = useGetListSellingItems({
+        categoryId: selectedCateId,
+        pageSize,
+        pageIndex,
+        filterType: selectedFilterType,
+    });
 
     useEffect(() => {
         window.onscroll = debounce(() => {

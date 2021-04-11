@@ -107,7 +107,7 @@ span {
     flex-direction: column;
     min-height: 0px;
     min-width: 0px;
-    max-width: 100%;
+    max-width: 77%;
     z-index: 0;
     position: relative;
     -webkit-box-flex: 1;
@@ -147,6 +147,8 @@ span {
     max-width: 100%;
     z-index: 0;
     flex-direction: column;
+    position: relative;
+    z-index: 999999;
 }
 
 @media screen and (min-width: 578px) {

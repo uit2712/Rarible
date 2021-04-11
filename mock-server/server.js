@@ -69,25 +69,43 @@ app.get("/api/explore/category/:id/items", (req, res, next) => {
         .jsonp(listCategoryItems.filter((item) => item.cateId === Number(id)));
 });
 
+
 app.post("/api/explore/category/items", (req, res, next) => {
+    const type = {
+        recentlyAdded: 0,
+        cheapest: 1,
+        highestPrice: 2,
+        mostLiked: 3,
+    }
     try {
         const categoryId = Number(req.body.categoryId);
         const pageSize = Number(req.body.pageSize);
         const pageIndex = Number(req.body.pageIndex);
+        const filterType = Number(req.body.filterType);
 
-        let result = [];
+        let result = [...listCategoryItems];
         if (pageIndex * pageSize > listCategoryItems.length) {
             res.status(CODE[200]).json(result);
             return;
         }
+        
+        switch(filterType) {
+            default: break;
+            case type.cheapest:
+                result = result.sort((a, b) => a.price - b.price);
+                break;
+            case type.mostLiked:
+                result = result.sort((a, b) => b.totalLike - a.totalLike);
+                break;
+        }
 
         if (categoryId === 0) {
-            result = [...listCategoryItems].slice(
+            result = result.slice(
                 pageIndex * pageSize,
                 (pageIndex + 1) * pageSize
             );
         } else {
-            result = [...listCategoryItems].filter(item => item.cateId === categoryId).slice(
+            result = result.filter(item => item.cateId === categoryId).slice(
                 pageIndex * pageSize,
                 (pageIndex + 1) * pageSize
             );

@@ -42,3 +42,10 @@ export interface IExploreFilterItem {
     type: EFilterType;
     text: string;
 }
+
+export interface IRequestGetListSellingItems {
+    categoryId: number;
+    pageSize: number;
+    pageIndex: number;
+    filterType?: EFilterType;
+}

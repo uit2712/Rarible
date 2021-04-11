@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getExploreCategory, getListSellingItems } from '../api/explore';
-import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
+import { ICategoryItem, IRequestGetListSellingItems, ISellingItem } from '../interfaces/explore-interfaces';
 import { setIsLoadingAction } from '../store/actions/common-actions';
 
-export function useGetListSellingItems(categoryId: number, pageSize: number, pageIndex: number) {
+export function useGetListSellingItems(request: IRequestGetListSellingItems) {
+    const { categoryId, pageSize, pageIndex, filterType } = request;
+
     const dispatch = useDispatch();
     const [data, setData] = useState<ISellingItem[]>([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -14,11 +16,16 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
     useEffect(() => {
         setData([]);
         dispatch(setIsLoadingAction(true));
-    }, [categoryId])
+    }, [dispatch, categoryId, filterType])
 
     useEffect(() => {
         setIsLoading(true);
-        getListSellingItems(categoryId, pageSize, pageIndex).then(({ data }) => {
+        getListSellingItems({
+            categoryId,
+            pageIndex,
+            pageSize,
+            filterType,
+        }).then(({ data }) => {
             setData(prevData => [...prevData, ...data]);
             setIsHasMore(data.length > 0);
             setIsLoading(false);
@@ -28,7 +35,7 @@ export function useGetListSellingItems(categoryId: number, pageSize: number, pag
             setError(true);
             dispatch(setIsLoadingAction(false));
         });
-    }, [categoryId, pageIndex, pageSize]);
+    }, [dispatch, categoryId, pageIndex, pageSize, filterType ]);
 
     return {
         data,

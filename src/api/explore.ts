@@ -1,5 +1,4 @@
-import axios, { CancelToken } from 'axios';
-import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
+import { ICategoryItem, IRequestGetListSellingItems, ISellingItem } from '../interfaces/explore-interfaces';
 import {request as Api} from './index';
 
 export function getExploreCategory() {
@@ -10,10 +9,11 @@ export function getListSellingItemsByCateId(cateId: number) {
     return Api.get<ISellingItem[]>(`/explore/category/${cateId}/items`);
 }
 
-export function getListSellingItems(categoryId: number, pageSize: number, pageIndex: number) {
+export function getListSellingItems(request: IRequestGetListSellingItems) {
     return Api.post<ISellingItem[]>('/explore/category/items', {
-        categoryId,
-        pageSize,
-        pageIndex,
+        categoryId: request.categoryId,
+        pageSize: request.pageSize,
+        pageIndex: request.pageIndex,
+        filterType: request.filterType,
     });
 }

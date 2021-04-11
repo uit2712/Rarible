@@ -1,10 +1,15 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import { useDisplayType } from '../../../../common/hooks';
 import { EFilterType } from '../../../../enums/explore-enums';
 import { IExploreFilterItem } from '../../../../interfaces/explore-interfaces';
+import { setSelectedFilterType } from '../../../../store/actions/explore-action';
+import { useGetSelectedFilterType } from '../../../../store/selectors/explore-selector';
 import './ExploreFilter.css';
+import ExploreFilterItem from './ExploreFilterItem';
 
 function ExploreFilter() {
+    const dispatch = useDispatch();
     const data: IExploreFilterItem[] = [
         { type: EFilterType.recentlyAdded, text: 'Recently added' },
         { type: EFilterType.cheapest, text: 'Cheapest' },
@@ -12,17 +17,17 @@ function ExploreFilter() {
         { type: EFilterType.mostLiked, text: 'Most liked' },
     ];
     const [isExpanded, setIsExpanded] = React.useState(false);
-    const displayType = useDisplayType(isExpanded);
+    const filterDisplayType = useDisplayType(isExpanded);
 
-    const [selectedType, setSelectedType] = React.useState<EFilterType>(EFilterType.recentlyAdded);
+    const selectedFilterType = useGetSelectedFilterType();
     function selectItem(item: IExploreFilterItem) {
-        setSelectedType(item.type);
+        dispatch(setSelectedFilterType(item.type));
         setIsExpanded(false);
     }
 
     return (
         <>
-            <div className="sc-bdnylx cAFwWB" onClick={() => setIsExpanded(prevData => !prevData)}>
+            <div className="sc-bdnylx cAFwWB" onClick={() => setIsExpanded(!isExpanded)}>
                 <div className="sc-carGAA sc-iTVIwl dpbdIG ipfhlk" aria-expanded="false">
                     <button className="sc-eCApGN sc-iqAbSa erMVgR eCtGus sc-dIsAE dOaLsj" type="button">
                         <div className="sc-bdnylx idfJGQ">
@@ -40,7 +45,7 @@ function ExploreFilter() {
                 </div>
                 <div id="tippy-container" style={{
                     position: 'absolute',
-                    display: displayType,
+                    display: filterDisplayType,
                 }}>
                     <div data-tippy-root="" id="tippy-5" style={{
                         zIndex: 500,
@@ -61,27 +66,13 @@ function ExploreFilter() {
                                     <div className="sc-jcwofb sbOhV">
                                         <div className="sc-carGAA sc-iBzFoy dpbdIG hUhRZG">
                                             <div className="sc-carGAA sc-bBjRzc dpbdIG bhjKRs">
-                                                <div className="sc-jNnnWF sc-dPaNSN sc-gsWdvU kUsNBB hKNOZQ dtPIGF">Sort by</div>
-                                                {
-                                                    data.map((item: IExploreFilterItem) => (
-                                                        <button key={item.type} type="button" className="sc-eCApGN sc-cOigif erMVgR eYAfKe" onClick={() => selectItem(item)}>
-                                                            <div className="sc-carGAA sc-jQAyEw dpbdIG flameU">
-                                                                <span className="sc-gtssRu glhQwU">{item.text}</span>
-                                                                {
-                                                                    item.type === selectedType ? (
-                                                                        <div className="sc-carGAA sc-jUfxsr dpbdIG fMfcaV">
-                                                                            <div className="sc-carGAA sc-fuIRbl dpbdIG cnZjJI">
-                                                                                <svg viewBox="0 0 14 11" fill="none" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
-                                                                                    <path d="M1 5L5 9L13 1" stroke="rgba(0, 102, 255, 1)" strokeWidth="2" strokeLinecap="round"></path>
-                                                                                </svg>
-                                                                            </div>
-                                                                        </div>
-                                                                    ) : null
-                                                                }
-                                                            </div>
-                                                        </button>
-                                                    ))
-                                                }
+                                                <div className="sc-jNnnWF sc-dPaNSN sc-gsWdvU kUsNBB hKNOZQ dtPIGF">Sort by
+                                                    {
+                                                        data.map((item: IExploreFilterItem) => (
+                                                            <ExploreFilterItem key={item.type} item={item} isActive={selectedFilterType === item.type} onSelect={() => selectItem(item)}/>
+                                                        ))
+                                                    }
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
