@@ -49,3 +49,11 @@ export interface IRequestGetListSellingItems {
     pageIndex: number;
     filterType?: EFilterType;
 }
+
+export interface ICollectibleDetail {
+    address: string;
+    name: string;
+    jobs: string;
+    twitterLink: string;
+    instagramLink: string;
+}
