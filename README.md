@@ -9,10 +9,12 @@ Link tải: [https://code.visualstudio.com/download](https://code.visualstudio.c
 # 4. Pull source code về và chọn nhánh _dev_
 # 5. Mở thư mục project vừa pull về
 ## Cài đặt modules cho project
+Mở command line chuyển đến thư mục gốc của project và gõ lệnh sau
 ```
 npm install
 ```
 ## Cài đặt modules cho mock server
+Mở command line chuyển đến thư mục mock-server và gõ lệnh sau
 ```
 cd mock-server
 npm install
