@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Explore from '../components/explore-page/explore/Explore';
+import './ExplorePage.css';
 
 function ExplorePage() {
     return (

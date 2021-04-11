@@ -2,7 +2,7 @@ import debounce from 'lodash.debounce';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import { ISellingItem } from '../../../../interfaces/explore-interfaces';
-import './ListSellingItems.css';
+// import './ListSellingItems.css';
 import { useGetListSellingItems } from '../../../../hooks/explore-hooks';
 import { useGetSelectedCateId, useGetSelectedFilterType } from '../../../../store/selectors/explore-selector';
 import SellingItemLoading from './SellingItemLoading';
@@ -38,14 +38,6 @@ function ListSellingItems() {
 
     return (
         <div id="nft-infinite-list" className="sc-bdnylx sc-gXZlrW jbxvPE leHCdN">
-            <div className="sc-bdnylx sc-ktvXtq dHKdQI kOfqLk">
-                <div className="sc-bdnylx sc-dkiTmt jbxvPE jNeIPT">
-                    <div className="sc-bdnylx sc-cVJhCs jbxvPE dmafXj">New items available.
-                        <div className="sc-bdnylx hCzCJn"></div>
-                        <button type="button" data-marker="root/appPage/marketplace/list/refreshButton" className="sc-eCApGN sc-kHVJdr erMVgR kwanLy">Refresh</button>
-                    </div>
-                </div>
-            </div>
             <div aria-label="grid" aria-readonly="true" className="ReactVirtualized__Grid" role="grid" tabIndex={0} style={{
                 boxSizing: 'border-box',
                 direction: 'ltr',

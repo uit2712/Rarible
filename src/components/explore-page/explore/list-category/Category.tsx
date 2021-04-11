@@ -6,7 +6,7 @@ import { ICategoryItem } from '../../../../interfaces/explore-interfaces';
 import { setSelectedCateId } from '../../../../store/actions/explore-action';
 import { useGetSelectedCateId } from '../../../../store/selectors/explore-selector';
 import ExploreFilter from '../filter/ExploreFilter';
-import './Category.css';
+// import './Category.css';
 
 function Category() {
     const dispatch = useDispatch();
