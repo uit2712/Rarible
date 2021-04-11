@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { ISellingItem } from '../../../common/interfaces';
 import { ECategoryType } from '../../../enums/collectible-enums';
 import { ICategoryItem } from '../../../interfaces/collectible-interfaces';
+import { setSelectedCateType } from '../../../store/actions/collectible-actions';
+import { useGetSelectedCateType } from '../../../store/selectors/collectible-selectors';
 
 function ListCategories() {
     const data: ICategoryItem[] = [
@@ -14,10 +17,11 @@ function ListCategories() {
         { name: 'Following', type: ECategoryType.following, total: 61 },
         { name: 'Followers', type: ECategoryType.followers, total: 387 },
     ]
-    const [selectedCateType, setSelectedCateType] = useState<ECategoryType>(ECategoryType.onSale);
+    const dispatch = useDispatch();
+    const selectedCateType = useGetSelectedCateType();
     function selectItem(item: ICategoryItem) {
         if ([ECategoryType.following, ECategoryType.followers].indexOf(item.type) < 0) {
-            setSelectedCateType(item.type);
+            dispatch(setSelectedCateType(item.type));
         }
     }
 

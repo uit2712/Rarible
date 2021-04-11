@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ISellingItem } from '../../../common/interfaces';
 import { useGetListOnSaleItems } from '../../../hooks/collectible-hooks';
 import SellingItem from '../../explore-page/explore/list-selling-items/SellingItem';
-import SellingItemLoading from '../../explore-page/explore/list-selling-items/SellingItemLoading';
+import SellingItemLoading from '../../../common/components/SellingItemLoading';
 
 export function ListOnSaleItems() {
     const { data } = useGetListOnSaleItems();
