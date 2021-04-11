@@ -1,6 +1,7 @@
 import * as React from 'react';
 import CollectibleAvatar from '../components/collectible-page/CollectibleAvatar';
 import CollectibleDetail from '../components/collectible-page/CollectibleDetail';
+import ListCategories from '../components/collectible-page/list-categories/ListCategories';
 import './CollectiblePage.css';
 
 function CollectiblePage() {
@@ -15,7 +16,7 @@ function CollectiblePage() {
                         </div>
                         <div className="sc-bdnylx gKioqY">
                             <div className="sc-bdnylx jbxvPE">
-
+                                <ListCategories/>
                             </div>
                         </div>
                     </div>
