@@ -34,7 +34,7 @@ function ListSellingItems() {
 
     useEffect(() => {
         setPageIndex(0);
-    }, [selectedCateId])
+    }, [selectedCateId, selectedFilterType])
 
     return (
         <div id="nft-infinite-list" className="sc-bdnylx sc-gXZlrW jbxvPE leHCdN">

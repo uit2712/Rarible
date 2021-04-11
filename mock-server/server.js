@@ -83,7 +83,7 @@ app.post("/api/explore/category/items", (req, res, next) => {
         const pageIndex = Number(req.body.pageIndex);
         const filterType = Number(req.body.filterType);
 
-        let result = [...listCategoryItems];
+        let result = [];
         if (pageIndex * pageSize > listCategoryItems.length) {
             res.status(CODE[200]).json(result);
             return;
@@ -92,20 +92,23 @@ app.post("/api/explore/category/items", (req, res, next) => {
         switch(filterType) {
             default: break;
             case type.cheapest:
-                result = result.sort((a, b) => a.price - b.price);
+                result = listCategoryItems.sort((a, b) => a.price - b.price);
+                break;
+            case type.highestPrice:
+                result = listCategoryItems.sort((a, b) => b.price - a.price);
                 break;
             case type.mostLiked:
-                result = result.sort((a, b) => b.totalLike - a.totalLike);
+                result = listCategoryItems.sort((a, b) => b.totalLike - a.totalLike);
                 break;
         }
 
         if (categoryId === 0) {
-            result = result.slice(
+            result = listCategoryItems.slice(
                 pageIndex * pageSize,
                 (pageIndex + 1) * pageSize
             );
         } else {
-            result = result.filter(item => item.cateId === categoryId).slice(
+            result = listCategoryItems.filter(item => item.cateId === categoryId).slice(
                 pageIndex * pageSize,
                 (pageIndex + 1) * pageSize
             );
