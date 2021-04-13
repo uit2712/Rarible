@@ -1,6 +1,8 @@
 import { Action, Reducer } from "redux";
+//import { getArrayValue } from "../../common/functions";
 import { IAction } from "../../common/interfaces";
-import { SET_SELECTED_CATE_ID } from "../actions/explore-action";
+import { ITrader } from "../../interfaces/explore-interfaces";
+import { SET_LIST_TOP_TRADERS, SET_SELECTED_CATE_ID } from "../actions/explore-action";
 
 export interface IExploreState {
     selectedCateId: number;
@@ -22,7 +24,7 @@ export const reducer: Reducer<IExploreState> = (state = initialState, action: Ac
         case SET_LIST_TOP_TRADERS:
             return {
                 ...state,
-                listTopTraders: getArrayValue<ITrader>((action as IAction<ITrader[]>).payload),
+                listTopTraders: ((action as IAction<ITrader[]>).payload),
             }
         default: return state;
     }

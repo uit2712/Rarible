@@ -1,4 +1,5 @@
 import { IAction } from "../../common/interfaces";
+import { ITrader } from "../../interfaces/explore-interfaces";
 
 export const SET_SELECTED_CATE_ID = 'SET_SELECTED_CATE_ID';
 export function setSelectedCateId(cateId: number): IAction<number> {

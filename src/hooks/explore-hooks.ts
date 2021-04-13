@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { getExploreCategory, getListSellingItems } from '../api/explore';
-import { ICategoryItem, ISellingItem } from '../interfaces/explore-interfaces';
+import { getExploreCategory, getListSellingItems, getListTopTrader } from '../api/explore';
+import { ICategoryItem, ISellingItem, ITrader } from '../interfaces/explore-interfaces';
+import { TopTraderType, TopTraderDuration } from '../common/types';
 
 export function useGetListSellingItems(categoryId: number, pageSize: number, pageIndex: number) {
     const [data, setData] = useState<ISellingItem[]>([]);
